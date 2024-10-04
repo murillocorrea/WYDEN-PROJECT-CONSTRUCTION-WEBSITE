@@ -41,6 +41,10 @@ do efeito âncora. Também, possui integração e operação de um sistema de re
 
 Atualmente, o front-end e o back-end estão integrados.
 
+## Laravel
+
+Em caso de dúvidas a respeito deste framework, por favor, consultar no README.MD dentro da pasta principal.
+
 ## Grupo
 
  - Murillo Correa
