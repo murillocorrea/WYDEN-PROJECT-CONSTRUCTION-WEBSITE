@@ -1,0 +1,48 @@
+name: Deploy para o GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run production
+
+    - name: Deploy to GitHub Pages
+      if: ${{ success() }}
+      run: |
+        # Cria diretório temporário e copia arquivos gerados da pasta /public
+        mkdir frontend
+        cp -R public/* frontend/
+
+        # Inicializa um repositório Git no diretório temporário
+        cd frontend
+        git init
+        git config user.name "GitHub Actions"
+        git config user.email "murillocorrea0310@gmail.com"
+
+        # Adiciona os arquivos copiados e cria um commit
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+
+        # Adiciona o repositório remoto
+        git remote add origin "https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git"
+
+        # Faz o push para a branch frontend
+        git push --force origin HEAD:frontend
