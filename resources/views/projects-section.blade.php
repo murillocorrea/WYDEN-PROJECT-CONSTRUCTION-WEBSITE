@@ -7,7 +7,7 @@
     <h2 class="section__title">Últimos Projetos <br> Registrados</h2>
 
     <div class="projects__container container grid">
-        @foreach ($projects->chunk(3) as $chunk)
+        {{-- @foreach ($projects->chunk(3) as $chunk)
             <div class="projects__row">
                 @foreach ($chunk as $project)
                     <article class="projects__card">
@@ -34,6 +34,6 @@
                     </article>
                 @endforeach
             </div>
-        @endforeach
+        @endforeach --}}
     </div>
  </section>
