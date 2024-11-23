@@ -46,3 +46,4 @@ jobs:
 
         # Faz o push para a branch frontend
         git push --force origin HEAD:frontend
+        
