@@ -100,7 +100,7 @@ function confirmDelete(projectId, event) {
         cancelButtonText: 'Cancelar'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`/projects/delete/${projectId}`, {
+            fetch(`${BACKEND_URL}/api/projects/${projectId}`, {
                 method: 'DELETE',
                 headers: {
                     'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
