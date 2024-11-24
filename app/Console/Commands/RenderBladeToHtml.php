@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\File;
+use App\Models\ProjectModel;
 
 class RenderBladeToHtml extends Command
 {
@@ -18,8 +19,10 @@ class RenderBladeToHtml extends Command
         $view = $this->argument('view');
         $outputPath = $this->argument('output');
 
+        $projects = ProjectModel::all();
+
         // Renderiza o conteúdo da view
-        $html = View::make($view)->render();
+        $html = View::make($view)->with('projects', $projects)->render();
 
         // Salva o conteúdo como um arquivo HTML
         File::put(public_path($outputPath), $html);

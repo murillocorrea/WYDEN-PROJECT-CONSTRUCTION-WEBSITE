@@ -267,7 +267,7 @@
     <div id="projectModal" class="modal" hidden>
     <div class="modal-content">
         <h2 id="modalTitle">Registrar Projeto</h2>
-        <form id="projectForm" action="http://localhost/projects/store" method="POST" enctype="multipart/form-data">
+        <form id="projectForm" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="" autocomplete="off">            <input type="hidden" name="_method" value="POST">            <input type="hidden" id="projectId" name="projectId">
             <div class="form__group">
                 <label for="projectName" class="form__label">Nome Projeto</label>
@@ -293,10 +293,70 @@
 
     <span class="section__subtitle">NOSSOS PROJETOS</span>
     <h2 class="section__title">Últimos Projetos <br> Registrados</h2>
-
     <div class="projects__container container grid">
-        
-    </div>
+                    <div class="projects__row">
+                                    <article class="projects__card">
+                        <img src="http://localhost/storage/images/projects/dwtmE7N3TqE6563kOBvlFLncXe6hxQFdZZaa9rai.png" alt="image" class="projects__img">
+
+                        <div class="projects__data">
+                            <h2 class="projects__title">teste</h2>
+                            <p class="projects__price">A partir de R$ 123.00</p>
+
+                            <p>
+                                aee
+                            </p>
+                            <div class="button-container">
+                                <form action="http://localhost/projects/delete/19" method="POST" style="display: inline;" id="delete-form-19">
+                                    <input type="hidden" name="_token" value="" autocomplete="off">                                    <input type="hidden" name="_method" value="DELETE">                                    <button type="submit" class="delete-button" onclick="confirmDelete(19, event)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <button class="button contract-project-button" onclick="confirmContract()">Contratar Projeto</button>
+                        </div>
+                    </article>
+                                    <article class="projects__card">
+                        <img src="http://localhost/storage/images/projects/BAiwq6CMeUtTSxwBiZQuF0r8WhIVCAQ3rl1BuzpB.png" alt="image" class="projects__img">
+
+                        <div class="projects__data">
+                            <h2 class="projects__title">aaaaaaaaaaaa</h2>
+                            <p class="projects__price">A partir de R$ 999.00</p>
+
+                            <p>
+                                123
+                            </p>
+                            <div class="button-container">
+                                <form action="http://localhost/projects/delete/20" method="POST" style="display: inline;" id="delete-form-20">
+                                    <input type="hidden" name="_token" value="" autocomplete="off">                                    <input type="hidden" name="_method" value="DELETE">                                    <button type="submit" class="delete-button" onclick="confirmDelete(20, event)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <button class="button contract-project-button" onclick="confirmContract()">Contratar Projeto</button>
+                        </div>
+                    </article>
+                                    <article class="projects__card">
+                        <img src="http://localhost/storage/images/projects/VNYTZzVdYVFrLFGQZlp0Ta5lElurw6eI9NFdrmjt.png" alt="image" class="projects__img">
+
+                        <div class="projects__data">
+                            <h2 class="projects__title">aaa</h2>
+                            <p class="projects__price">A partir de R$ 123.00</p>
+
+                            <p>
+                                a
+                            </p>
+                            <div class="button-container">
+                                <form action="http://localhost/projects/delete/21" method="POST" style="display: inline;" id="delete-form-21">
+                                    <input type="hidden" name="_token" value="" autocomplete="off">                                    <input type="hidden" name="_method" value="DELETE">                                    <button type="submit" class="delete-button" onclick="confirmDelete(21, event)">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <button class="button contract-project-button" onclick="confirmContract()">Contratar Projeto</button>
+                        </div>
+                    </article>
+                            </div>
+            </div>
  </section>
          <!--==================== CONTACT ====================-->
          <section class="contact section contact_section" id="contact">
