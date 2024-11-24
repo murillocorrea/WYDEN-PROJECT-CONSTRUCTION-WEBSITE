@@ -147,6 +147,3 @@
         });
     });
 </script>
-<script>
-   const BACKEND_URL = "https://fb07-170-83-72-252.ngrok-free.app";
-</script>
