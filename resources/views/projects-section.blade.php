@@ -5,7 +5,7 @@
 
     <span class="section__subtitle">NOSSOS PROJETOS</span>
     <h2 class="section__title">Últimos Projetos <br> Registrados</h2>
-
+    @dd($projects)
     <div class="projects__container container grid">
         @foreach ($projects->chunk(3) as $chunk)
             <div class="projects__row">
