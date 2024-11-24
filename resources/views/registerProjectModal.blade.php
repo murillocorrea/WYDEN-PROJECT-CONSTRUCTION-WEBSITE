@@ -1,7 +1,7 @@
 <div id="projectModal" class="modal" hidden>
     <div class="modal-content">
         <h2 id="modalTitle">Registrar Projeto</h2>
-        <form id="projectForm" action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
+        <form id="projectForm" enctype="multipart/form-data">
             @csrf
             @method("POST")
             <input type="hidden" id="projectId" name="projectId">

@@ -46,28 +46,23 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-document.getElementById('projectForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.getElementById('projectForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
 
-    const projectFormData = new FormData(this);
-
-    fetch(this.action, {
-        method: 'POST',
-        body: projectFormData,
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        return response.json().then(err => {
-            throw { status: response.status, errors: err.errors };
+    try {
+        const response = await fetch(`${BACKEND_URL}/api/projects`, {
+            method: 'POST',
+            body: formData
         });
-    })
-    .then(data => {
+
+        if (!response.ok) {
+            throw new Error(`Erro: ${response.status} ${response.statusText}`);
+        }
+
+        const result = await response.json();
         Swal.fire({
             title: 'Sucesso!',
             text: 'Projeto criado com sucesso!',
@@ -80,35 +75,16 @@ document.getElementById('projectForm').addEventListener('submit', function(event
             closeModalAction();
             location.reload();
         });
-
-    })
-    .catch(error => {
-        if (error.status === 422) {
-            let errorMessage = 'There were validation errors:\n';
-            for (const [key, value] of Object.entries(error.errors)) {
-                errorMessage += `${value.join(', ')}\n`;
-            }
-            Swal.fire({
-                title: 'Erro de validação!',
-                text: errorMessage,
-                icon: 'error',
-                iconColor: '#f9601f',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#f9601f',
-            });
-            closeModalAction();
-        } else {
-            Swal.fire({
-                title: 'Erro!',
-                text: 'There was an error creating your project. Please try again later.',
-                icon: 'error',
-                iconColor: '#f9601f',
-                confirmButtonText: 'OK',
-                confirmButtonColor: '#f9601f',
-            });
-            closeModalAction();
-        }
-    });
+    } catch (error) {
+        Swal.fire({
+            title: 'Erro!',
+            text: 'Ocorreu um erro ao registrar teu projeto. Tente novamente mais tarde!',
+            icon: 'error',
+            iconColor: '#f9601f',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#f9601f',
+        });
+    }
 });
 
 function confirmDelete(projectId, event) {
