@@ -12,6 +12,10 @@ class ProjectsController extends Controller
         $projects = ProjectModel::all();
         return view('index', compact('projects'));
     }
+    public function getProjects() {
+        $projects = ProjectModel::all();
+        return response()->json($projects);
+    }
     public function store(ProjectRequest $request) {
         $project = ProjectModel::create([
             'name' => $request->validated()['projectName'],
