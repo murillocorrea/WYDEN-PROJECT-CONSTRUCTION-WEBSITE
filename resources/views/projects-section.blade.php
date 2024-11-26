@@ -34,15 +34,15 @@
                         const projectCard = document.createElement('article');
                         projectCard.classList.add('projects__card');
                         projectCard.innerHTML = `
-                            <img src="${project.image_path ? `${BACKEND_URL}/storage/${project.image_path}` : 'assets/img/default-image.jpg'}" alt="image" class="projects__img">
+                            <img src="${project.image_path ? `${BACKEND_URL}/storage/${project.image_path}` : 'assets/img/default-image.jpg'}" alt="${project.name}" class="projects__img">
                             <div class="projects__data">
                                 <h2 class="projects__title">${project.name}</h2>
-                                <p class="projects__price">A partir de R$ ${project.price}</p>
+                                <p class="projects__price">A partir de R$ ${parseFloat(project.price).toFixed(2)}</p>
                                 <p>${project.description}</p>
                                 <div class="button-container">
                                     <form action="${BACKEND_URL}/projects/delete/${project.id}" method="POST" style="display: inline;" id="delete-form-${project.id}">
-                                        <button type="submit" class="delete-button" onclick="confirmDelete(${project.id}, event)">
-                                            <i class="fas fa-trash"></i>
+                                        <button type="submit" class="delete-button" style="background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer;" onclick="confirmDelete(${project.id}, event)">
+                                            <i class="fas fa-trash" style="margin-right: 5px;"></i> Remover
                                         </button>
                                     </form>
                                 </div>
@@ -73,4 +73,5 @@
         }
         return result;
     }
+
 </script>
