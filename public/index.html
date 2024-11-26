@@ -332,8 +332,10 @@
                                 <p>${project.description}</p>
                                 <div class="button-container">
                                     <form action="${BACKEND_URL}/projects/delete/${project.id}" method="POST" style="display: inline;" id="delete-form-${project.id}">
-                                        <button type="submit" class="delete-button" style="background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer;" onclick="confirmDelete(${project.id}, event)">
-                                            <i class="fas fa-trash" style="margin-right: 5px;"></i> Remover
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="${CSRF_TOKEN}">
+                                        <button type="submit" class="delete-button" onclick="confirmDelete(${project.id}, event)">
+                                            <i class="fas fa-trash"></i>
                                         </button>
                                     </form>
                                 </div>
