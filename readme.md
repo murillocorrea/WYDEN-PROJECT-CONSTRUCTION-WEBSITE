@@ -137,46 +137,6 @@ Depois é necessario commitar a alteração e subir no github para atualizar no 
 
    **Atenção:** A partir desse momento, você não deve encerrar o processo do Ngrok. Pois se encerrar e iniciar novamente, será gerada uma nova URL e você deverá fazer esse processo novamente para surtir efeito.
 
-# Passo a passo dia da apresentação
-
-## 1. Iniciar banco de dados MySql
-Abrir o xampp e dar start no MySql
-
-## 2. Iniciar ngrok
-Abra o aplicativo ngrok e cole o comando
-
-    ngrok http 8000
-## 3. Atualizar URL do backend no site e index.html
-**Primeiro**, execute o seguinte comando no terminal do vscode
-
-    php artisan render:blade index index.html
-    
-   **Após o passo anterior**, copie a URL gerada pelo Ngrok nessa linha. 
-    Forwarding                    ***https://d0b2-187-103-252-3.ngrok-free.app*** -> http://localhost:8000
-    
-Cole a URL na variável BACKEND_URL que fica nas primeiras linhas do arquivo "public/index.html"
-
-    <script>
-          const BACKEND_URL = "https://d0b2-187-103-252-3.ngrok-free.app";
-    </script>
-
-
-   Comite essa alteração para o git e faça push para o github:
-   
-
-    git add public/index.html
-    git commit -m "Atualizacao da URL de backend"
-    git push
-
-## 4. Iniciar servidor backend
-Execute o seguinte comando no terminal do vscode, dentro do diretório da aplicação
-
-    php artisan serve
-  ## 5. Teste
-  Acesse a URL https://murillocorrea.github.io/WYDEN-PROJECT-CONSTRUCTION-WEBSITE/ e teste criar/contratar/deletar um projeto e enviar o formulário de contato.
-Todas essas funcionalidades devem estar funcionando.
-Lembre-se: a partir desse momento você não pode fechar a aplicação do ngrok e o terminal do vscode. Se você fizer isso, terá que refazer todo esse processo.
-
 ## Funcionalidades
 * Botões interativos para navegação entre os conteúdos do site.
 * Botões para visualizar os serviços fornecidos.
