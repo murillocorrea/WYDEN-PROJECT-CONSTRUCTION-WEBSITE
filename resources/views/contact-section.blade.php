@@ -4,7 +4,7 @@
         <h2 class="section__title">Escreva Para Nós e Construa</h2>
 
         <div class="contact__container grid">
-            <img src="{{ asset('assets/img/contact-img.png') }}" alt="image" class="contact__img">
+            <img src="${BACKEND_URL}/assets/img/contact-img.png" alt="image" class="contact__img">
 
             <div class="contact__data grid">
                 <!-- Formulário de Contato -->
