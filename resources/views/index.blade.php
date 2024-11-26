@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+   <script>
+      const BACKEND_URL = "https://55fb-170-83-72-252.ngrok-free.app";
+   </script>
    <html lang="en">
    <head>
       <meta charset="UTF-8">
