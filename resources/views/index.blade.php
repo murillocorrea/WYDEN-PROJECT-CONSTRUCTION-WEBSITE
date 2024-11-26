@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+   <html lang="en">
    <script>
       const BACKEND_URL = "https://caeb-170-83-72-252.ngrok-free.app";
    </script>
-   <html lang="en">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
