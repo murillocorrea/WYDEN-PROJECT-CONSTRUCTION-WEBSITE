@@ -1,4 +1,32 @@
-# Construct project
+# Site de construção
+
+## Funcionalidades
+* Botões interativos para navegação entre os conteúdos do site.
+* Botões para visualizar os serviços fornecidos.
+* CRUD de projetos (criar, ler, atualizar e deletar). 
+* Formulário de contato do cliente com a empresa.
+* Validações dos campos dos formulários.
+
+## Tecnologias utilizadas
+### Front-end
+* HTML
+* CSS
+* Bootstrap (framework para facilitar a utilização do CSS)
+* Laravel (framewok do PHP foi utilizado nesse caso para fazer os arquivos ".blade.php" que geram o "index.html" do site)
+* Github pages (utilizado para hospedar o front-end do site)
+* Javascript (para enviar as requisições assíncronas pro backend)
+
+### Back-end
+* PHP (utilizando framework laravel. Com esse framework foi criada a API para que o front-end envie as requisições)
+* Composer (gerenciador de bibliotecas do site)
+* XAMPP (utilizado apenas para rodar e gerenciar o banco de dados MySql, por ser mais prática a configuração)
+* Ngrok (tecnologia que atribui uma URL pública a uma porta do computador. Rodamos o backend no localhost, porta 8000 e o ngrok atribui uma URL pública para essa porta)
+### Controle de versões
+* Git
+* Github
+* Visual Studio Code
+### Observação
+O código do front-end e back-end estão no mesmo repositório no Github. A diferença é que o back-end está na branch "main" e o front-end está na branch "frontend"
 
 ## Design
  
