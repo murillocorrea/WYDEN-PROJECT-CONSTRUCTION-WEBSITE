@@ -324,11 +324,8 @@
                     chunk.forEach(project => {
                         const projectCard = document.createElement('article');
                         projectCard.classList.add('projects__card');
-                        console.log(`${BACKEND_URL}/storage/${project.image_path}`)
-                        console.log(`assets/img/${project.image_path}`)
                         projectCard.innerHTML = `
-                            <img src="assets/img/${project.image_path}" alt="image" class="projects__img">
-                            <img src="${project.image_path ? `${BACKEND_URL}/storage/${project.image_path}` : 'default-image.jpg'}" alt="image" class="projects__img">
+                            <img src="${project.image_path ? `assets/img/${project.image_path}` : 'assets/img/default-image.jpg'}" alt="image" class="projects__img">
                             <div class="projects__data">
                                 <h2 class="projects__title">${project.name}</h2>
                                 <p class="projects__price">A partir de R$ ${project.price}</p>
