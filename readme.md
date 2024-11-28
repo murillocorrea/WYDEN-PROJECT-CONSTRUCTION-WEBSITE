@@ -1,8 +1,5 @@
 # Site de construção
 
-## Como acessar frontend
-Se não for alterar o backend, é só acessar o [link do GithubPages](https://murillocorrea.github.io/WYDEN-PROJECT-CONSTRUCTION-WEBSITE/).
-
 ## Como executar o backend
 Atualmente o backend já está sendo executado em uma máquina. Mas se você quiser executar em outro computador, deve seguir os seguintes passos.
 
