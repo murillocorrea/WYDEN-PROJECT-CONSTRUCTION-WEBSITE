@@ -1,5 +1,3 @@
-# Site de construção
-
 ## Como acessar frontend
 Se não for alterar o backend, é só acessar o [link do GithubPages](https://murillocorrea.github.io/WYDEN-PROJECT-CONSTRUCTION-WEBSITE/).
 
